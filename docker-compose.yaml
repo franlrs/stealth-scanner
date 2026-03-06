@@ -1,0 +1,18 @@
+services:
+  stealth-scanner:
+    build: .
+    container_name: stealth_scanner
+    
+    # 1. Grants root permissions over the host's network hardware
+    privileged: true
+    
+    # 2. Bypasses Docker's network isolation to use the host's network interface directly
+    network_mode: "host"
+    
+    # Environment variables: Set the target IP here
+    environment:
+      - TARGET_IP=10.9.128.1
+    
+    # Map the current directory to edit code without rebuilding
+    volumes:
+      - .:/app
