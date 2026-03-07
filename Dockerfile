@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Install Python libraries
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt [cite: 3]
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project files
 COPY . .
